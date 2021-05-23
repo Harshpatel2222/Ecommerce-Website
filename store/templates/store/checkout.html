@@ -41,6 +41,7 @@
         <br>
         <div class="box-element hidden" id="payment-info">
             <small>Paypal Options</small>
+            <button id="make-payment">Make Payment</button>
         </div>
 
     </div>
@@ -76,5 +77,14 @@
     if (shipping == 'False') {
         document.getElementById('shipping-info').innerHTML = ''
     }
+
+    var form = document.getElementById('form')
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault()
+        console.log('Form Submitted...')
+        document.getElementById('form-button').classList.add('hidden')
+        document.getElementById('payment-info').classList.remove('hidden')
+    })
 </script>
 {% endblock content %}
